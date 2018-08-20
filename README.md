@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm run server](#npm-test)
+- [Update PHP Path](#update-PHP-path-in-server.js-file)
 
 ## Available Scripts
 
