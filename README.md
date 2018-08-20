@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [Install modules](#install-modules)
 - [Available Scripts](#available-scripts)
-  - [npm start](#npm-start)
+  - [npm run client](#npm-run-client)
   - [npm run server](#npm-run-server)
 - [Update PHP Path](#update-php-path)
 - [Database Setup](#database-setup)
@@ -22,7 +22,7 @@ It will install node modules mentioned in package.json file which are required t
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run client`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
