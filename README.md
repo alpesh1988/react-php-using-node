@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm run server](#npm-run-server)
-- [Update PHP Path](#update-PHP-path-in-server.js-file)
+- [Update PHP Path](#update-php-path)
 
 ## Available Scripts
 
@@ -24,6 +24,6 @@ You will also see any lint errors in the console.
 Launches the node server which is able to serve *.php files.<br>
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
-## `Update PHP path in server.js file`
+## Update PHP path
 
 Follow the instuctions provided in server.js file.
