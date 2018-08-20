@@ -68,18 +68,18 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
      URL: localhost:4000/editproduct<br>
      Method: POST<br>
      Data:
-          {
-            "data": {
-              "id": "7",
-              "name": "laptop a3_edited",
-              "description": "laptop a3_edited",
-              "price": "38000"
-            }
-          }
+    {
+        "data": {
+            "id": "7",
+            "name": "laptop a3_edited",
+            "description": "laptop a3_edited",
+            "price": "38000"
+        }
+    }
 
   4. To delete the product data:
 
      URL: localhost:4000/deleteproduct?id=7<br>
      Method: DELETE
 
-Don't forget to add stars If you find this repository helpful ;)
+==Don't forget to add stars If you find this repository helpful ;) ==
