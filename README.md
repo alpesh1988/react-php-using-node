@@ -68,6 +68,7 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
      URL: localhost:4000/editproduct<br>
      Method: POST<br>
      Data:
+    <pre>
     {
         "data": {
             "id": "7",
@@ -76,10 +77,11 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
             "price": "38000"
         }
     }
+    </pre>
 
   4. To delete the product data:
 
      URL: localhost:4000/deleteproduct?id=7<br>
      Method: DELETE
 
-==Don't forget to add stars If you find this repository helpful ;) ==
+Don't forget to add stars If you find this repository helpful.
