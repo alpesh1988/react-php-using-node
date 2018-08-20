@@ -53,7 +53,7 @@ app.delete('/deleteproduct', function(req,res){
 
 app.get('/fetchproducts', function(req,res){
   execPhp(__dirname+'/views/select.php', 'C://wamp64//bin//php//php7.2.4//php', function(error, php, output){
-    php.fetchProducts(function(err, result ){
+    php.fetchproducts(function(err, result ){
       res.send(result);
     });
   });

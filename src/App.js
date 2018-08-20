@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; 
-// import BootstrapTable from 'react-bootstrap-table-next';
-// import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
-// import paginationFactory from 'react-bootstrap-table2-paginator';
 import axios from 'axios';
 import _ from 'lodash';
-import { Button } from 'reactstrap';
+import { Button, Alert } from 'reactstrap';
+import AlertComponent from './AlertComponent';
 
 class App extends Component {
 
@@ -21,7 +19,10 @@ class App extends Component {
         name: '',
         description: '',
         price: ''
-      }
+      },
+      alertColor: '',
+      alertText: '',
+      alertVisible: false
     }
     this.deleteRow = this.deleteRow.bind(this);
     this.editRow = this.editRow.bind(this);
@@ -31,6 +32,7 @@ class App extends Component {
     this.onChangeNameAdd = this.onChangeNameAdd.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
     this.onChangePriceAdd = this.onChangePriceAdd.bind(this);
+    this.onDismissAlert = this.onDismissAlert.bind(this);
   }
 
   componentDidMount() {
@@ -59,6 +61,11 @@ class App extends Component {
     .then(response => {
       console.log('delete response: ', response );
       this.fetchProductsData();
+      this.setState({
+        alertVisible: true,
+        alertColor: 'danger',
+        alertText: response.data.message
+      })
     });
   }
 
@@ -119,6 +126,14 @@ class App extends Component {
     })
   }
 
+  onDismissAlert() {
+    this.setState({
+      alertVisible: false,
+      alertColor: '',
+      alertText: ''
+    })
+  }
+
   addRow( addedRowData ) {
     console.log(' addRow :', addedRowData )
     axios.post('http://localhost:4000/addproduct', {
@@ -132,7 +147,10 @@ class App extends Component {
           name: '',
           description: '',
           price: ''
-        }
+        },
+        alertVisible: true,
+        alertColor: 'success',
+        alertText: response.data.message
       })
     });
   }
@@ -147,7 +165,10 @@ class App extends Component {
       this.fetchProductsData();
       this.setState({
         rowIndexToBeEdited: null,
-        editedRowData: {}
+        editedRowData: {},
+        alertVisible: true,
+        alertColor: 'info',
+        alertText: response.data.message
       })
     });
   }
@@ -178,8 +199,9 @@ class App extends Component {
   }
 
   renderTable() {
-    let { rowIndexToBeEdited, addedRowData } = this.state;
-    let rows = this.state.products.map((product, index) => {
+    let { rowIndexToBeEdited, addedRowData, alertVisible, alertColor, alertText } = this.state,    
+      totalProducts = this.state.products && this.state.products.length,
+      rows = totalProducts > 0 && this.state.products.map((product, index) => {
         if ( index !== rowIndexToBeEdited ) {
           return (
             <tr key={index}>
@@ -208,21 +230,22 @@ class App extends Component {
             </tr>
           )
         }
-      }),
-      totalProducts = this.state.products && this.state.products.length;
+      });
     return (
       <div>
+        { alertText !== '' ? <AlertComponent visible={alertVisible} text={alertText} color={alertColor} onDismissAlert={this.onDismissAlert}/> : '' }
         <p>Total Products: {totalProducts}</p>
         <table className="table table-striped table-bordered">
           { this.renderTableHeader() }
           <tbody>
+            { totalProducts > 0 ?
             <tr>
               <td><input type="text" className="form-control" placeholder="Auto incremented value" disabled /></td>
               <td><input type="text" className="form-control" placeholder="Enter name" value={addedRowData.name} onChange={this.onChangeNameAdd} /></td>
               <td><input type="text" className="form-control" placeholder="Enter Description" value={addedRowData.description} onChange={this.onChangeDescriptionAdd} /></td>
               <td><input type="text" className="form-control" placeholder="Enter Price" value={addedRowData.price} onChange={this.onChangePriceAdd} /></td>
               <td><Button color="primary" size="sm" disabled={ _.isEmpty(addedRowData.name) || _.isEmpty(addedRowData.description) || _.isEmpty(addedRowData.price) } onClick={() => this.addRow(addedRowData)}>Add</Button></td>
-            </tr>
+            </tr> : '' }
             { rows }
           </tbody>
         </table>
