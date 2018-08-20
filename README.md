@@ -47,13 +47,13 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
 
   1. To fetch the product data:
      
-     URL: localhost:4000/fetchproducts
+     URL: localhost:4000/fetchproducts<br>
      Method: GET
 
   2. To add the product data:
 
-     URL: localhost:4000/addproduct
-     Method: POST
+     URL: localhost:4000/addproduct<br>
+     Method: POST<br>
      Data:
       {
         "data": {
@@ -65,21 +65,21 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
 
   3. To edit the product data:
 
-     URL: localhost:4000/editproduct
-     Method: POST
+     URL: localhost:4000/editproduct<br>
+     Method: POST<br>
      Data:
-      {
-        "data": {
-          "id": "7",
-          "name": "laptop a3_edited",
-          "description": "laptop a3_edited",
-          "price": "38000"
-        }
-      }
+          {
+            "data": {
+              "id": "7",
+              "name": "laptop a3_edited",
+              "description": "laptop a3_edited",
+              "price": "38000"
+            }
+          }
 
   4. To delete the product data:
 
-     URL: localhost:4000/deleteproduct?id=7
+     URL: localhost:4000/deleteproduct?id=7<br>
      Method: DELETE
 
 Don't forget to add stars If you find this repository helpful ;)
