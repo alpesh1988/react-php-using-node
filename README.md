@@ -56,14 +56,14 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
      <b>Method:</b> POST<br>
      <b>Data:</b>
     </pre>
-      {
+    {
         "data": {
-          "name": "laptop a3",
-          "description": "laptop a3",
-          "price": "38000"
+            "name": "laptop a3",
+            "description": "laptop a3",
+            "price": "38000"
         }
-      }
-  </pre>
+    }
+    </pre>
 
   3. To edit the product data:
 
