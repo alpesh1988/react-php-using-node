@@ -30,7 +30,6 @@ app.get('/',(req, res) => {
 app.post('/addproduct', function(req,res){
   execPhp(__dirname+'/views/add.php', 'C://wamp64//bin//php//php7.2.4//php', function(error, php, output){
     php.addproduct(req.body.data, function(err, result, output1 ){
-      console.log('result: ',result);
       res.send(result);
     });
   });
@@ -39,7 +38,6 @@ app.post('/addproduct', function(req,res){
 app.post('/editproduct', function(req,res){
   execPhp(__dirname+'/views/edit.php', 'C://wamp64//bin//php//php7.2.4//php', function(error, php, output){
     php.editproduct(req.body.data, function(err, result, output1 ){
-      console.log('result: ',result);
       res.send(result);
     });
   });
@@ -55,8 +53,7 @@ app.delete('/deleteproduct', function(req,res){
 
 app.get('/fetchproducts', function(req,res){
   execPhp(__dirname+'/views/select.php', 'C://wamp64//bin//php//php7.2.4//php', function(error, php, output){
-    php.getproducts(function(err, result ){
-      console.log('result: ', result )
+    php.fetchProducts(function(err, result ){
       res.send(result);
     });
   });

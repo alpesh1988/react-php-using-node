@@ -1,7 +1,7 @@
 <?php  
 
 //select.php
- function getProducts() {  
+ function fetchProducts() {  
 
   include('database_connection.php');
   $query = "SELECT * FROM products ORDER BY id ASC";
