@@ -1,0 +1,29 @@
+{
+  "name": "react-table2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.0.0",
+    "cors": "^2.8.4",
+    "exec-php": "0.0.4",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "php-express": "0.0.3",
+    "query-string": "^6.1.0",
+    "react": "^16.4.2",
+    "react-bootstrap-table-next": "^1.0.0",
+    "react-bootstrap-table2-filter": "^1.0.0",
+    "react-bootstrap-table2-paginator": "^1.0.0",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^6.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
