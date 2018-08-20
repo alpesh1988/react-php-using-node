@@ -54,32 +54,13 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
 
      <b>URL:</b> localhost:4000/addproduct<br>
      <b>Method:</b> POST<br>
-     <b>Data:</b>
-    </pre>
-    {
-        "data": {
-            "name": "laptop a3",
-            "description": "laptop a3",
-            "price": "38000"
-        }
-    }
-    </pre>
+     <b>Data:</b> {"data":{"name":"laptop a3","description":"laptop a3","price":"38000"}}
 
   3. To edit the product data:
 
      <b>URL:</b> localhost:4000/editproduct<br>
      <b>Method:</b> POST<br>
-     <b>Data:</b>
-    <pre>
-    {
-        "data": {
-            "id": "7",
-            "name": "laptop a3_edited",
-            "description": "laptop a3_edited",
-            "price": "38000"
-        }
-    }
-    </pre>
+     <b>Data:</b> {"data":{"id":"7","name":"laptop a3_edited","description":"laptop a3_edited","price":"38000"}}
 
   4. To delete the product data:
 
