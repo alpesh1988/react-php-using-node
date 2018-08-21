@@ -6,7 +6,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Available Scripts](#available-scripts)
   - [npm run client](#npm-run-client)
   - [npm run server](#npm-run-server)
-  - [npm start](#npm-start)
 - [Update PHP Path](#update-php-path)
 - [Database Setup](#database-setup)
 - [REST API sample](#rest-api-sample)
@@ -36,10 +35,6 @@ You will also see any lint errors in the console.
 
 Launches the node server which is able to serve *.php files.<br>
 Open [http://localhost:4000/fetchproducts](http://localhost:4000/fetchproducts) to view response in the browser.
-
-### `npm start`
-
-Launches the application and node server concurrently on 3000 and 4000 port numbers respectively.<br>
 
 ## Update PHP path
 

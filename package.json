@@ -23,8 +23,7 @@
   },
   "scripts": {
     "client": "copy \"service-worker.js\" \"dist\" && parcel index.html -p 3000",
-    "server": "node server.js",
-    "start": "concurrently --kill-others \"npm run server\" \"npm run client\""
+    "server": "node server.js"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
