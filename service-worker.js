@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-var dataCacheName = 'PWA-v1';
-var cacheName = 'Sample_PWA';
+var dataCacheName = 'CRUD_DATA_CACHE_PWA';
+var cacheName = 'CRUD_CACHE_PWA';
 var filesToCache = [
  '/',
  '/index.html',
- '/client.2a998987.js',
- '/client.2a998987.css'
+ '/src.7978b79c.js',
+ '/src.7978b79c.css'
 ];
 
 self.addEventListener('install', function(e) {
@@ -53,23 +53,23 @@ self.addEventListener('fetch', function(e) {
  console.log('[Service Worker] Fetch', e.request.url);
  //Note: use below commented code if your application is fetching data from network
 
- // var dataUrl = '/';
- // if (e.request.url.indexOf(dataUrl) > -1) {
- //   /*
- //    * When the request URL contains dataUrl, the app is asking for fresh
- //    * data. In this case, the service worker always goes to the
- //    * network and then caches the response. This is called the "Cache then
- //    * network" strategy
- //    */
- //   e.respondWith(
- //     caches.open(dataCacheName).then(function(cache) {
- //       return fetch(e.request).then(function(response){
- //         cache.put(e.request.url, response.clone());
- //         return response;
- //       });
- //     })
- //   );
- // } else {
+    var dataUrl = 'fetchproducts';
+    if (e.request.url.indexOf(dataUrl) > -1) {
+    /*
+        * When the request URL contains dataUrl, the app is asking for fresh
+        * data. In this case, the service worker always goes to the
+        * network and then caches the response. This is called the "Cache then
+        * network" strategy
+        */
+    e.respondWith(
+        caches.open(dataCacheName).then(function(cache) {
+        return fetch(e.request.url).then(function(response){
+            cache.put(e.request.url, response.clone());
+            return response;
+        });
+        })
+    );
+    } else {
    /*
     * The app is asking for app shell files. In this scenario the app uses the
     * "Cache, falling back to the network" offline strategy:
@@ -79,5 +79,5 @@ self.addEventListener('fetch', function(e) {
        return response || fetch(e.request);
      })
    );
- //}
+ }
 });

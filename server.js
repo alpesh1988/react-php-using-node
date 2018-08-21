@@ -19,9 +19,6 @@ app.use(bodyParser.urlencoded({
 // */
 app.use(bodyParser.json());
 
-app.get('/',(req, res) => {
-  res.status(200).send('ok')
-})
 /*
 // you need to update PHP path where you have installed PHP.
 // In my case, It was C://wamp64//bin//php//php7.2.4//php.

@@ -6,9 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [Available Scripts](#available-scripts)
   - [npm run client](#npm-run-client)
   - [npm run server](#npm-run-server)
+  - [npm start](#npm-start)
 - [Update PHP Path](#update-php-path)
 - [Database Setup](#database-setup)
 - [REST API sample](#rest-api-sample)
+- [Service Worker](#service-worker)
 
 ## Install Modules
 
@@ -33,7 +35,11 @@ You will also see any lint errors in the console.
 ### `npm run server`
 
 Launches the node server which is able to serve *.php files.<br>
-Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+Open [http://localhost:4000/fetchproducts](http://localhost:4000/fetchproducts) to view response in the browser.
+
+### `npm start`
+
+Launches the application and node server concurrently on 3000 and 4000 port numbers respectively.<br>
 
 ## Update PHP path
 
@@ -67,4 +73,8 @@ I have used MySQL as database. Please find DB_DDL_DML.sql file at root folder. Y
      <b>URL:</b> localhost:4000/deleteproduct?id=7<br>
      <b>Method:</b> DELETE
 
-Don't forget to add stars If you find this repository helpful.
+## Service worker
+
+This repo uses service worker which you can see in developer tools. Each time I am updating the data cache when add, edit or delete functinality is performed. Once application is up, you can see DB data on localhost:3000. Now you can terminate client (stop npm run client command), You can still perform data manipulation activities with service workers. :)
+
+Don't forget to add star If you find this repository helpful.

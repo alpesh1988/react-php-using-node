@@ -22,8 +22,9 @@
     "reactstrap": "^6.3.1"
   },
   "scripts": {
-    "client": "parcel index.html -p 3000",
-    "server": "node server.js"
+    "client": "copy \"service-worker.js\" \"dist\" && parcel index.html -p 3000",
+    "server": "node server.js",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
