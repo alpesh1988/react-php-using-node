@@ -76,7 +76,7 @@ This repo uses service worker which you can see in developer tools. Each time I 
 
 ## Screenshots
 
-- ![Homepage](homepage.png)
+- ![Homepage](demo-images/homepage.png)
 
 
 Don't forget to add star If you find this repository helpful.
