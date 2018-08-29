@@ -77,9 +77,9 @@ This repo uses service worker which you can see in developer tools. Each time I 
 ## Screenshots
 
 - Homepage ![Homepage](demo-images/homepage.PNG)
-- ![AddRow](demo-images/add_row.PNG)
-- ![EditRow](demo-images/edit_row.PNG)
-- ![DeleteRow](demo-images/delete_row.PNG)
+- Add a row ![AddRow](demo-images/add_row.PNG)
+- Edit a row ![EditRow](demo-images/edit_row.PNG)
+- Delete a row ![DeleteRow](demo-images/delete_row.PNG)
 
 
 Don't forget to add star If you find this repository helpful.
